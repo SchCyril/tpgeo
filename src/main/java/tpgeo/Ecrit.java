@@ -1,6 +1,10 @@
 package tpgeo;
 
+import java.util.logging.Logger;
+
 public class Ecrit implements Runnable {
+
+
 	private String texte;
 	private int nb;
 	private int duration;
@@ -15,7 +19,7 @@ public class Ecrit implements Runnable {
 	public void run() {
 		for (int i = 0; i < nb; i++) {
 
-			LOGGER.trace(texte);
+			LOGGER(texte);
 			try {
 				Thread.sleep(duration);
 

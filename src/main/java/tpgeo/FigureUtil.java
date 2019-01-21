@@ -1,4 +1,5 @@
 package tpgeo;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -19,7 +20,7 @@ public final class FigureUtil {
 	private final static int LIMITE_X = 50;
 	private final static int LIMITE_Y = 50;
 
-	private static Map<String, Figure> figures = new HashMap<>();
+	private static Map<String, Figure> figures = new HashMap<String, Figure>();
 	public static int countFigure = 0;
 
 	public static Point getRandomPoint() {
@@ -81,7 +82,7 @@ public final class FigureUtil {
 	}
 
 	public static Collection<Point> getPoints(Figure... figures) {
-		List<Point> points = new ArrayList<>();
+		List<Point> points = new ArrayList<Point>();
 		for (int i = 0; i < figures.length; i++) {
 			points.addAll(figures[i].getPoints());
 		}
@@ -89,7 +90,7 @@ public final class FigureUtil {
 	}
 
 	public static Collection<Figure> genere(int x) {
-		List<Figure> figures = new ArrayList<>();
+		List<Figure> figures = new ArrayList<Figure>();
 		for (int i = 0; i < x; i++) {
 			figures.add(getRandomFigure());
 
@@ -119,14 +120,8 @@ public final class FigureUtil {
 		return dessin.getFigures().stream().sorted().collect(Collectors.toList());
 	}
 
-	public static Collection<Figure> trieSurface(Dessin dessin) {
-//		List<Figure> figures = new ArrayList<>(dessin.getFigures());
-//		List<Figure> figureSurfacable = new ArrayList<>();
-//		for (Figure tmp : figures) {
-//			if (tmp instanceof Surfacable) {
-//				figureSurfacable.add(tmp);
-//			}
-//		}
+	public static List<Object> trieSurface(Dessin dessin) {
+
 		return dessin.getFigures().stream().filter(f -> f instanceof Surfacable).sorted((o1, o2) -> {
 
 			Surfacable s1 = (Surfacable) o1;
@@ -145,7 +140,7 @@ public final class FigureUtil {
 	}
 
 	public static void imprime(Dessin dessin) throws ImpressionHorsLimite, IOException {
-		List<Figure> figures = new ArrayList<>();
+		List<Figure> figures = new ArrayList<Figure>();
 		for (Figure entry : dessin.getFigures()) {
 			boolean horsLimite = false;
 			for (Point point : entry.getPoints()) {
