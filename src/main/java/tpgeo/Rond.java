@@ -89,4 +89,10 @@ public class Rond extends Figure implements Surfacable {
 		return point.distance(new Point(point.getINIT_X(), point.getINIT_Y()));
 	}
 
+	@Override
+	protected void LOGGER(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

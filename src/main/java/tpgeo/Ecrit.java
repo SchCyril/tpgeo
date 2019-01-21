@@ -1,10 +1,9 @@
 package tpgeo;
 
-import java.util.logging.Logger;
-
 public class Ecrit implements Runnable {
 
 
+	private static final String LOGGER = null;
 	private String texte;
 	private int nb;
 	private int duration;
@@ -24,9 +23,14 @@ public class Ecrit implements Runnable {
 				Thread.sleep(duration);
 
 			} catch (InterruptedException e) {
-				LOGGER.trace("InterruptedException : " + e.getMessage());
+				LOGGER("InterruptedException : " + e.getMessage());
 
 			}
 		}
+	}
+
+	private void LOGGER(String texte2) {
+		// TODO Auto-generated method stub
+		
 	}
 }

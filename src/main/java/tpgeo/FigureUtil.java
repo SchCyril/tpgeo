@@ -19,6 +19,7 @@ public final class FigureUtil {
 	private final static int RAND = 99;
 	private final static int LIMITE_X = 50;
 	private final static int LIMITE_Y = 50;
+	private static final String LOGGER = null;
 
 	private static Map<String, Figure> figures = new HashMap<String, Figure>();
 	public static int countFigure = 0;
@@ -210,8 +211,13 @@ public final class FigureUtil {
 				}
 			}
 		}
-		LOGGER.trace(str.toString());
+		LOGGER(str.toString());
 		br.close();
 		fr.close();
+	}
+
+	private static void LOGGER(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 }

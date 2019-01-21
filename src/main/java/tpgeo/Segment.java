@@ -89,4 +89,10 @@ public class Segment extends Figure {
 		return 0;
 	}
 
+	@Override
+	protected void LOGGER(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -116,4 +116,10 @@ public class Rectangle extends Figure implements Surfacable {
 		
 	}
 
+	@Override
+	protected void LOGGER(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

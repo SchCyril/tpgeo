@@ -6,6 +6,7 @@ import java.util.List;
 
 public abstract class Figure implements Comparable<Figure> {
 	
+	private static final String LOGGER = null;
 	protected Couleur col;
 	public abstract String toString();
 
@@ -14,8 +15,10 @@ public abstract class Figure implements Comparable<Figure> {
 	protected abstract String getType();
 
 	public void affiche() {
-		LOGGER.trace(toString());
+		LOGGER(toString());
 	}
+
+	protected abstract void LOGGER(String string);
 
 	public abstract Collection<Point> getPoints();
 
